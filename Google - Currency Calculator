@@ -1,6 +1,6 @@
 
 [Patterns]
-Name = "Google | Currency Calculator 20111026"
+Name = "Google | Currency Calculator 20111026-2"
 Active = TRUE
 Multi = TRUE
 URL = "www.google.co(.jp|m)/search\? $TYPE(htm)"
@@ -9,10 +9,10 @@ Match = "<input value=$AV(("
         "($|[%c2][%a3]|[%e2][%82][%ac]|[%c2][%a2]|[%ef][%bc][%84])[1-9][0-9,]+{0,*}(.[0-9]+|)|"
         "[1-9][0-9,]+{0,*}(.[0-9]+|)(\s|)(USD|GBP|EUR|CHF|CAD|AUD|NZD|HKD|SGD)"
         ")) [^>]++ id=$AV(lst-ib) [^>]+>"
-        "$URL((*\&q=[^&]+)\#\#)"
-Replace = "\k$STOP()"
+        "$URL((*[&|?]q=[^&]+)\#\#)"
+Replace = ""
           "<script type="text/javascript">document.location=""
           "\# in JPY\#"
           "";</script>"
-          "<!-- USD,GBP,EUR,CENT,USD(BIG) -->"
+          "<!-- $,GBP,EUR,CENT,USD(BIG) -->"
 
